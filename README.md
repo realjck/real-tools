@@ -1,12 +1,14 @@
 # real-tools
 
-## Utility tools for Windows with file dialog in NodeJS
+## Utility tools with File dialog in NodeJS
 
-The provided batch files act as convenient shortcuts executable from any location within your Windows interface.
+The provided batch files act as convenient shortcuts executable from any location within your Windows interface. Requires Node.js
+
+[![Node.js](https://img.shields.io/badge/node.js-20.11.0-0?logo=node.js&labelColor=233056&color=65b849)](https://nodejs.org/)
 
 ### Installation
 
-Once you've obtained the repository (either by cloning or unzipping it), navigate to the designated "app" folder within the extracted directory. To install the required dependencies for these scripts to function, execute the `npm install` command from the command line.
+Once you've obtained the repository (either by cloning or unzipping it), navigate to the designated "app" folder within the extracted directory. To install the required dependencies for these scripts to function, execute the `npm install` command from the command line:
 
 ~~~~
 cd app
