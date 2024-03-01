@@ -1,5 +1,14 @@
-﻿{
-	"scripts" : {
-		"minify" : "node minify.js"
-	}
+{
+  "scripts": {
+    "uglifyjs": "node tools/uglifyjs.js"
+  },
+  "name": "real-tools",
+  "version": "0.1.0",
+  "main": "help.js",
+  "author": "jck",
+  "license": "MIT",
+  "dependencies": {
+    "node-file-dialog": "^1.0.3",
+    "uglify-js": "^3.17.4"
+  }
 }
