@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "uglifyjs": "node tools/uglifyjs.js"
+    "uglifyjs": "node tool/uglifyjs.js"
   },
   "name": "real-tools",
   "version": "0.1.0",

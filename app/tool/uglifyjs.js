@@ -1,4 +1,4 @@
-﻿const { colorLog } = require('./../utils/color-log');
+﻿const { colorLog } = require('./../util/color-log');
 const fs = require('fs').promises;
 const dialog = require('node-file-dialog');
 const UglifyJS = require("uglify-js");
