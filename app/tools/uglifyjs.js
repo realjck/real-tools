@@ -1,4 +1,5 @@
-﻿const fs = require('fs').promises;
+﻿const { colorLog } = require('./../utils/color-log');
+const fs = require('fs').promises;
 const dialog = require('node-file-dialog');
 const UglifyJS = require("uglify-js");
 
@@ -15,11 +16,11 @@ async function minifyFile() {
 		const filePathArray = await dialog({ type: 'open-file' });
 		const filePath = filePathArray[0];
 
-		console.log('>>> READING FILE...');
+		colorLog('>>> READING FILE...', 'yellow');
 		const fileContent = await fs.open(filePath, 'r');
 		const content = await fileContent.readFile('utf-8');
 
-		console.log('>>> STARTING PROCESS...');
+		colorLog('>>> STARTING PROCESS...', 'cyan');
 		const fileExtension = filePath.split('.').pop();
 		const minifiedContent = UglifyJS.minify(content, {
 			v8: true,
@@ -28,9 +29,10 @@ async function minifyFile() {
 		}).code;
 		const minifiedFilePath = filePath.replace(new RegExp(`\\.${fileExtension}$`), `.min.${fileExtension}`);
 		await fs.writeFile(minifiedFilePath, minifiedContent, 'utf-8');
-		console.log(`>>> FILE UGLIFIED WITH SUCCESS: ${minifiedFilePath}`);
+		colorLog(`>>> FILE UGLIFIED WITH SUCCESS: ${minifiedFilePath}`, 'green');
 	} catch (error) {
-		console.error('>>> THERE\'S AN ERROR DUDE:', error);
+		colorLog('>>> THERE\'S AN ERROR DUDE.', 'red');
+		console.error(error);
 	}
 }
 
