@@ -19,9 +19,13 @@ async function minifyFile() {
 		colorLog('>>> READING FILE...', 'yellow');
 		const fileContent = await fs.open(filePath, 'r');
 		const content = await fileContent.readFile('utf-8');
+		const fileExtension = filePath.split('.').pop();
+		if (fileExtension.toLowerCase() !== 'js'){
+			colorLog('>>> ERROR: THE FILE MUST BE JAVASCRIPT.', 'red');
+			process.exit(1);
+		}
 
 		colorLog('>>> STARTING PROCESS...', 'cyan');
-		const fileExtension = filePath.split('.').pop();
 		const minifiedContent = UglifyJS.minify(content, {
 			v8: true,
 			webkit: true,
