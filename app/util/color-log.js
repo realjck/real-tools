@@ -33,8 +33,6 @@ const colors = {
  * @param text
  * @param color
  */
-function colorLog(text, color) {
+export function colorLog(text, color) {
     console.log(colors.fg[color] + text + colors.reset);
 }
-
-module.exports = {colorLog}

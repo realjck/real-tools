@@ -1,6 +1,8 @@
 {
+  "type": "module",
   "scripts": {
-    "uglifyjs": "node tool/uglifyjs.js"
+	"f-uglifyjs": "node tool/f-uglifyjs.js",
+	"c-uglifyjs": "node tool/c-uglifyjs.js"
   },
   "name": "real-tools",
   "version": "0.1.0",
@@ -8,7 +10,8 @@
   "author": "jck",
   "license": "MIT",
   "dependencies": {
-    "node-file-dialog": "^1.0.3",
-    "uglify-js": "^3.17.4"
+	"clipboardy": "^4.0.0",
+	"node-file-dialog": "^1.0.3",
+	"uglify-js": "^3.17.4"
   }
 }

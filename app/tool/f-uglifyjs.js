@@ -1,7 +1,7 @@
-﻿const { colorLog } = require('./../util/color-log');
-const fs = require('fs').promises;
-const dialog = require('node-file-dialog');
-const UglifyJS = require("uglify-js");
+﻿import {colorLog} from "../util/color-log.js";
+import fs from "fs/promises";
+import dialog from "node-file-dialog";
+import Uglifyjs from "uglify-js";
 
 /**
  * Open a file, Uglify the content, then Save it at filename.min.ext
@@ -26,7 +26,7 @@ async function minifyFile() {
 		}
 
 		colorLog('>>> STARTING PROCESS...', 'cyan');
-		const minifiedContent = UglifyJS.minify(content, {
+		const minifiedContent = Uglifyjs.minify(content, {
 			v8: true,
 			webkit: true,
 			warnings: "verbose"
